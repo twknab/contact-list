@@ -553,3 +553,10 @@ video {
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
 }
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}

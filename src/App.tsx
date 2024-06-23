@@ -1,17 +1,7 @@
-import './App.css'
+import ContactList from "./views/ContactList";
 
 function App() {
-  return (
-    <div>
-      {/* TODO: Frame out component */}
-      {/* Add "Add Contact" button */}
-      {/* Add "Contact List" */}
-      {/* Clicking into Contact List shows Details */}
-      {/* Optional: Add "Edit Contact" button */}
-      {/* Optional: Add "Delete Contact" button */}
-      <h1>Hello World</h1>
-    </div>
-  )
+  return <ContactList />;
 }
 
 export default App
