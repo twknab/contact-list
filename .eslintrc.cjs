@@ -12,7 +12,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    project: ['./tsconfig.app.json', './tsconfig.node.json', './tailwind.config.js'],
     tsconfigRootDir: __dirname,
   },
   plugins: ['react-refresh'],
@@ -22,4 +22,10 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+  overrides: [
+    {
+      files: ["*.js"],
+      parser: "espree",
+    }
+  ]
 }
