@@ -1,30 +1,20 @@
-# React + TypeScript + Vite
+# Contact List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Summary
 
-Currently, two official plugins are available:
+This application is just a small demo application utilizing Redux and some dummy JSON data, to show how we can store data to our store, fetch it, and also update it and have it persist in the browser (until cache is cleared). Rather than using a CSS utility framework like Tailwind, we're using Chakra UI component library and styling utilities. This application is written to be scalable, so you could pull out the JSON data fetching in place of an API call via Axios or GraphQL if you desired.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+- Vite
+- React
+- Redux
+- Chakra UI
+- Vercel
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## How to Run
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Clone repository
+- `npm install`
+- `npm run dev`
+- Load the URL provided by Vite into your browser
