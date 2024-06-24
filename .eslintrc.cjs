@@ -12,7 +12,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.app.json', './tsconfig.node.json', './tailwind.config.js'],
+    project: ['./tsconfig.app.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
   plugins: ['react-refresh'],
