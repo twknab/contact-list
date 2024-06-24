@@ -32,12 +32,10 @@ function AddContactModal({ isOpen, onClose, onSave }: AddContactModalProps) {
 
   const contacts = useSelector((state: RootState) => state.contacts.contacts);
 
-  console.log(contacts.length)
-
   const handleOnSave = () => {
     const contact: Contact = {
-      // NOTE: Id increments by array length + 1
-      // This would not be ideal for a real app and would be done on the backend
+      /* NOTE: ID increments by array length + 1
+      in production this would be handled by our backend. */
       id: (contacts.length + 1).toString(),
       firstName,
       lastName,
@@ -47,7 +45,7 @@ function AddContactModal({ isOpen, onClose, onSave }: AddContactModalProps) {
     };
 
     onSave(contact);
-  }
+  };
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -72,13 +70,16 @@ function AddContactModal({ isOpen, onClose, onSave }: AddContactModalProps) {
           </FormControl>
           <FormControl isRequired mt="5">
             <FormLabel>Email</FormLabel>
+            {/* TODO: Add enforcement for proper email formatting */}
             <Input
+              type="email"
               placeholder="dtanner@fullhouse.com"
               onChange={(e) => setEmail(e.target.value)}
             />
           </FormControl>
           <FormControl isRequired mt="5">
             <FormLabel>Phone Number</FormLabel>
+            {/* TODO: Add enforcement for phone numbers only in correct formatting */}
             <Input
               placeholder="(415) 420-1234"
               onChange={(e) => setPhoneNumber(e.target.value)}
