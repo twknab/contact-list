@@ -17,7 +17,7 @@ export interface Contacts {
 
 function ContactList() {
   return (
-    <VStack mt="10" align="center" w="full" mx={{ base: "6", md: "0" }}>
+    <VStack my="10" align="center" w="full">
       {/* Add "Add Contact" button */}
       {/* Update data store? */}
       {/* Optional: Add "Edit Contact" button */}
