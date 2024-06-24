@@ -2,15 +2,19 @@
 
 ## Summary
 
-This application is just a small demo application utilizing Redux and some dummy JSON data, to show how we can store data to our store, fetch it, and also update it and have it persist in the browser (until cache is cleared). Rather than using a CSS utility framework like Tailwind, we're using Chakra UI component library and styling utilities. This application is written to be scalable, so you could pull out the JSON data fetching in place of an API call via Axios or GraphQL if you desired.
+This application is just a small demo application utilizing [React](https://reactjs.org/) and [Redux](https://redux.js.org/) demonstrating how we can store, fetch, and add to our data store. Data is initialized with JSON data to mock an API call, and then stored in local storage, so that this data will persist on page reload or closing the tab. When new data is added, it is pushed to the data store and saved to local storage.
+
+For our component stylings, we're using [Chakra UI](https://chakra-ui.com/) and Chakra's CSS utilities, rather than Tailwind CSS.
+
+This application is written to be scalable, so you could delete the JSON data fetching and saving to local storage, and instead use an API call via Axios or GraphQL if desired. The aim of this project was to get more familiar with how Redux works.
 
 ## Technologies Used
 
-- Vite
-- React
-- Redux
-- Chakra UI
-- Vercel
+- [Vite](https://vitejs.dev/)
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Chakra UI](https://chakra-ui.com/)
+- [Vercel](https://vercel.com/)
 
 ## How to Run
 
@@ -18,3 +22,9 @@ This application is just a small demo application utilizing Redux and some dummy
 - `npm install`
 - `npm run dev`
 - Load the URL provided by Vite into your browser
+
+## Features
+
+- See all contacts
+- View contact details (click a contact)
+- Add a new contact
