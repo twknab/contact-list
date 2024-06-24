@@ -1,5 +1,6 @@
-import { Heading, VStack } from "@chakra-ui/react";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import ContactCard from "../components/ContactCard";
+import contacts from "../data/contact-data.json";
 
 export interface Contact {
   id: string;
@@ -10,31 +11,29 @@ export interface Contact {
   notes: string;
 }
 
-// export interface Contacts {
-//   contacts: Contact[];
-// }
-
-const contact = {
-  id: "1",
-  firstName: "John",
-  lastName: "Doe",
-  email: "john.doe@example.com",
-  phoneNumber: "1234567890",
-  notes: "Qui ea duis fugiat cupidatat elit sit."
-};
+export interface Contacts {
+  contacts: Contact[];
+}
 
 function ContactList() {
   return (
-    <VStack m="10">
+    <VStack mt="10" align="center" w="full" mx={{ base: "6", md: "0" }}>
       {/* Add "Add Contact" button */}
-      {/* Clicking into Contact List shows Details */}
+      {/* Update data store? */}
       {/* Optional: Add "Edit Contact" button */}
       {/* Optional: Add "Delete Contact" button */}
       <Heading mb="6">Contact List</Heading>
-      {/* TODO: Iterate over data and render contact card for each */}
-      {/* TODO: Handle a no data state */}
-      <ContactCard contact={contact} />
-      <ContactCard contact={contact} />
+      <Box>
+        {contacts.length ? (
+          contacts.map((contact) => (
+            <ContactCard contact={contact} key={contact.id} />
+          ))
+        ) : (
+          <Text as="i" fontSize="xl">
+            No contacts found
+          </Text>
+        )}
+      </Box>
     </VStack>
   );
 }
