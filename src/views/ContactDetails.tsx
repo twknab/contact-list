@@ -6,6 +6,7 @@ import {
   Card,
   CardBody,
   CardFooter,
+  Flex,
   Heading,
   Link as ChakraLink,
   List,
@@ -36,7 +37,7 @@ function ContactDetails() {
   };
 
   return (
-    <VStack m="10">
+    <VStack m={{ base: "4", sm: "10" }}>
       <Breadcrumb mb="4">
         <BreadcrumbItem>
           <BreadcrumbLink onClick={handleContactsClick}>
@@ -53,41 +54,49 @@ function ContactDetails() {
         direction={{ base: "column", sm: "row" }}
         overflow="hidden"
         variant="filled"
-        p="4"
+        p={{ base: "0", md: "5" }}
         bg="gray.100"
         borderRadius="2xl"
+        maxW="700px"
+        w="100%"
       >
-        <Avatar
-          bg="teal.500"
-          m="6"
-          size="2xl"
-          name={`${firstName} ${lastName}`}
-        />
+        <Stack
+          direction={{ base: "column", md: "row" }}
+          align="center"
+          spacing="24px"
+          w="100%"
+        >
+          <Flex
+            align="flex-start"
+            h="100%"
+            mt={{ base: "4", md: "10" }}
+            ml={{ base: "0", md: "6" }}
+          >
+            <Avatar size="2xl" name={`${firstName} ${lastName}`} />
+          </Flex>
 
-        <Stack>
-          <CardBody>
-            <Heading size="2xl">{`${firstName} ${lastName}`}</Heading>
-
-            <Text py="2">{notes}</Text>
-
-            <List spacing={3} py="2">
-              <ListItem>
-                <ListIcon as={EmailIcon} color="teal.500" />
-                {email}
-              </ListItem>
-              <ListItem>
-                <ListIcon as={PhoneIcon} color="teal.500" />
-                {phoneNumber}
-              </ListItem>
-            </List>
-          </CardBody>
-
-          <CardFooter>
-            <ChakraLink as={ReactRouterLink} to={`/`}>
-              <ArrowBackIcon mr="1" />
-              Back to Contacts
-            </ChakraLink>
-          </CardFooter>
+          <Stack flex="1" spacing="4">
+            <CardBody>
+              <Heading size="2xl" flexWrap="wrap">{`${firstName} ${lastName}`}</Heading>
+              <Text py="2">{notes}</Text>
+              <List spacing={3} py="2">
+                <ListItem>
+                  <ListIcon as={EmailIcon} color="teal.500" />
+                  {email}
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={PhoneIcon} color="teal.500" />
+                  {phoneNumber}
+                </ListItem>
+              </List>
+            </CardBody>
+            <CardFooter>
+              <ChakraLink as={ReactRouterLink} to={`/`}>
+                <ArrowBackIcon mr="1" />
+                Back to Contacts
+              </ChakraLink>
+            </CardFooter>
+          </Stack>
         </Stack>
       </Card>
     </VStack>

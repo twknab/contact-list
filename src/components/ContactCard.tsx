@@ -18,15 +18,23 @@ function ContactCard({ contact }: ContactCardProps) {
   return (
     <Flex
       p="4"
+      maxW="600px"
+      w="390px"
       onClick={handleNavigate}
-      _hover={{ backgroundColor: 'gray.100', borderRadius: "15px", cursor: "pointer"}}
+      _hover={{
+        backgroundColor: "gray.100",
+        borderRadius: "15px",
+        cursor: "pointer",
+      }}
     >
-      <Avatar bg="teal.500" name={`${firstName} ${lastName}`} />
+      <Avatar name={`${firstName} ${lastName}`} colorScheme="orange" />
       <Box ml="3">
-        <Text fontSize="xl" fontWeight="bold">{`${firstName} ${lastName}`}</Text>
-        <Text fontSize="sm">
-          {email} | {phoneNumber}
-        </Text>
+        <Text
+          fontSize="xl"
+          fontWeight="bold"
+        >{`${firstName} ${lastName}`}</Text>
+        <Text fontSize="sm">{email}</Text>
+        <Text fontSize="sm">{phoneNumber}</Text>
       </Box>
     </Flex>
   );
