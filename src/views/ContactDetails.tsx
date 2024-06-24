@@ -17,7 +17,11 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Contact } from "../views/ContactList";
-import { useLocation, useNavigate, Link as ReactRouterLink } from "react-router-dom";
+import {
+  useLocation,
+  useNavigate,
+  Link as ReactRouterLink,
+} from "react-router-dom";
 import { ArrowBackIcon, EmailIcon, PhoneIcon } from "@chakra-ui/icons";
 
 interface LocationState {
@@ -26,7 +30,9 @@ interface LocationState {
 
 function ContactDetails() {
   // deconstruct `location.state.contact`
-  const { state: { contact } } = useLocation() as { state: LocationState };
+  const {
+    state: { contact },
+  } = useLocation() as { state: LocationState };
   const navigate = useNavigate();
 
   const { firstName, lastName, email, phoneNumber, notes } = contact;
@@ -59,6 +65,7 @@ function ContactDetails() {
         borderRadius="2xl"
         maxW="700px"
         w="100%"
+        boxShadow="lg"
       >
         <Stack
           direction={{ base: "column", md: "row" }}
@@ -69,7 +76,7 @@ function ContactDetails() {
           <Flex
             align="flex-start"
             h="100%"
-            mt={{ base: "4", md: "10" }}
+            mt={{ base: "6", md: "10" }}
             ml={{ base: "0", md: "6" }}
           >
             <Avatar size="2xl" name={`${firstName} ${lastName}`} />
@@ -77,7 +84,7 @@ function ContactDetails() {
 
           <Stack flex="1" spacing="4">
             <CardBody>
-              <Heading size="2xl" flexWrap="wrap">{`${firstName} ${lastName}`}</Heading>
+              <Heading size="2xl">{`${firstName} ${lastName}`}</Heading>
               <Text py="2">{notes}</Text>
               <List spacing={3} py="2">
                 <ListItem>
@@ -91,7 +98,7 @@ function ContactDetails() {
               </List>
             </CardBody>
             <CardFooter>
-              <ChakraLink as={ReactRouterLink} to={`/`}>
+              <ChakraLink as={ReactRouterLink} to={`/`} mb="3">
                 <ArrowBackIcon mr="1" />
                 Back to Contacts
               </ChakraLink>
