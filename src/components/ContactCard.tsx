@@ -20,6 +20,7 @@ function ContactCard({ contact }: ContactCardProps) {
       p="4"
       maxW="600px"
       w="390px"
+      pl="6"
       onClick={handleNavigate}
       _hover={{
         backgroundColor: "gray.100",
@@ -27,7 +28,7 @@ function ContactCard({ contact }: ContactCardProps) {
         cursor: "pointer",
       }}
     >
-      <Avatar name={`${firstName} ${lastName}`} colorScheme="orange" />
+      <Avatar name={`${firstName} ${lastName}`} ml="12" />
       <Box ml="3">
         <Text
           fontSize="xl"
