@@ -1,6 +1,6 @@
 import { Avatar, Box, Flex, Text } from "@chakra-ui/react";
 import { useNavigate, NavigateFunction } from "react-router-dom";
-import { Contact } from "../views/ContactList";
+import { Contact } from "../types/contact";
 
 interface ContactCardProps {
   contact: Contact;

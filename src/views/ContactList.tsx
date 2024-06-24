@@ -1,21 +1,19 @@
 import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import ContactCard from "../components/ContactCard";
-import contacts from "../data/contact-data.json";
-
-export interface Contact {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phoneNumber: string;
-  notes: string;
-}
-
-export interface Contacts {
-  contacts: Contact[];
-}
+import { useSelector, useDispatch } from "react-redux";
+import { Contacts } from "../types/contact";
+import { useEffect } from "react";
+import { setContacts } from "../features/contacts/contactSlice";
+import contactsData from "../data/contact-data.json";
 
 function ContactList() {
+  const contacts = useSelector((state: { contacts: Contacts }) => state.contacts).contacts;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setContacts(contactsData));
+  }, [dispatch]);
+
   return (
     <VStack my="10" align="center" w="full">
       {/* Add "Add Contact" button */}

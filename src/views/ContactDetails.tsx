@@ -16,7 +16,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { Contact } from "../views/ContactList";
+import { Contact } from "../types/contact";
 import {
   useLocation,
   useNavigate,
@@ -36,7 +36,6 @@ function ContactDetails() {
   const navigate = useNavigate();
 
   const { firstName, lastName, email, phoneNumber, notes } = contact;
-  // TODO: Add API call via useEffect
 
   const handleContactsClick = () => {
     navigate("/");
