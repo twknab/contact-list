@@ -39,7 +39,6 @@ function ContactList() {
     <>
       <VStack my="10" align="center" w="full">
         {/* TODO: Add "Edit Contact" button */}
-        {/* TODO: Add "Delete Contact" button */}
         <Heading mb="6">Contact List</Heading>
         <Button
           size="lg"
