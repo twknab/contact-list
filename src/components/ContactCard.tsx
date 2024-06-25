@@ -1,5 +1,5 @@
 import { Avatar, Box, Flex, IconButton, Text } from "@chakra-ui/react";
-import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
+import { DeleteIcon, /*EditIcon*/ } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Contacts } from "../types/contact";
 import { deleteContact } from "../features/contacts/contactSlice";
