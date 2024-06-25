@@ -28,6 +28,8 @@ This application is written to be scalable, so you could delete the JSON data fe
 
 ## Features
 
-- See all contacts
-- View contact details (click a contact)
-- Add a new contact
+- View all contacts
+- View a contact's details
+- Create a new contact
+- Edit a contact
+- Delete a contact
