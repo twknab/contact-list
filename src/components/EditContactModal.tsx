@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../store";
 import {
   Button,
   FormControl,
@@ -17,26 +15,24 @@ import {
 } from "@chakra-ui/react";
 import { Contact } from "../types/contact";
 
-interface AddContactModalProps {
+interface EditContactModalProps {
+  contact: Contact;
   isOpen: boolean;
   onSave: (contact: Contact) => void;
   onClose: () => void;
 }
 
-function AddContactModal({ isOpen, onClose, onSave }: AddContactModalProps) {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [notes, setNotes] = useState("");
-
-  const contacts = useSelector((state: RootState) => state.contacts.contacts);
+function EditContactModal({ contact, isOpen, onClose, onSave }: EditContactModalProps) {
+  const [firstName, setFirstName] = useState(contact.firstName);
+  const [lastName, setLastName] = useState(contact.lastName);
+  const [email, setEmail] = useState(contact.email);
+  const [phoneNumber, setPhoneNumber] = useState(contact.phoneNumber);
+  const [notes, setNotes] = useState(contact.notes);
 
   const handleOnSave = () => {
-    const contact: Contact = {
-      /* NOTE: ID increments by array length + 1
-      in production this would be handled by our backend. */
-      id: (contacts.length + 1).toString(),
+
+    const updatedContact: Contact = {
+      id: contact.id,
       firstName,
       lastName,
       email,
@@ -44,7 +40,7 @@ function AddContactModal({ isOpen, onClose, onSave }: AddContactModalProps) {
       notes,
     };
 
-    onSave(contact);
+    onSave(updatedContact);
   };
 
   return (
@@ -58,6 +54,7 @@ function AddContactModal({ isOpen, onClose, onSave }: AddContactModalProps) {
             <FormLabel>First name</FormLabel>
             <Input
               placeholder="Danny"
+              value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
           </FormControl>
@@ -65,6 +62,7 @@ function AddContactModal({ isOpen, onClose, onSave }: AddContactModalProps) {
             <FormLabel>Last name</FormLabel>
             <Input
               placeholder="Tanner"
+              value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
           </FormControl>
@@ -74,6 +72,7 @@ function AddContactModal({ isOpen, onClose, onSave }: AddContactModalProps) {
             <Input
               type="email"
               placeholder="dtanner@fullhouse.com"
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </FormControl>
@@ -82,6 +81,7 @@ function AddContactModal({ isOpen, onClose, onSave }: AddContactModalProps) {
             {/* TODO: Add enforcement for phone numbers only in correct formatting */}
             <Input
               placeholder="(415) 420-1234"
+              value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
           </FormControl>
@@ -89,6 +89,7 @@ function AddContactModal({ isOpen, onClose, onSave }: AddContactModalProps) {
             <FormLabel>Notes</FormLabel>
             <Textarea
               placeholder="Some cool notes"
+              value={notes}
               onChange={(e) => setNotes(e.target.value)}
             />
           </FormControl>
@@ -112,4 +113,4 @@ function AddContactModal({ isOpen, onClose, onSave }: AddContactModalProps) {
   );
 }
 
-export default AddContactModal;
+export default EditContactModal;

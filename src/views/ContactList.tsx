@@ -3,7 +3,7 @@ import ContactCard from "../components/ContactCard";
 import { useSelector, useDispatch } from "react-redux";
 import { Contact, Contacts } from "../types/contact";
 import { useEffect, useState } from "react";
-import { addContact, setContacts } from "../features/contacts/contactSlice";
+import { createContact, setContacts } from "../features/contacts/contactSlice";
 import initialContactsData from "../data/contact-data.json";
 import AddContactModal from "../components/AddContactModal";
 
@@ -12,7 +12,7 @@ function ContactList() {
     (state: { contacts: Contacts }) => state.contacts
   ).contacts;
   const dispatch = useDispatch();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAddContactModalOpen, setIsAddContactModalOpen] = useState(false);
 
   useEffect(() => {
     const savedContacts = localStorage.getItem("contacts");
@@ -27,8 +27,8 @@ function ContactList() {
   }, [dispatch]);
 
   const handleOnModalSave = (newContact: Contact) => {
-    setIsModalOpen(false);
-    dispatch(addContact(newContact));
+    setIsAddContactModalOpen(false);
+    dispatch(createContact(newContact));
 
     // Update local storage with new contact
     const updatedContacts = [...contacts, newContact];
@@ -44,7 +44,7 @@ function ContactList() {
           size="lg"
           colorScheme="purple"
           mb="4"
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => setIsAddContactModalOpen(true)}
         >
           Add Contact
         </Button>
@@ -60,11 +60,11 @@ function ContactList() {
           )}
         </Box>
       </VStack>
-      {isModalOpen && (
+      {isAddContactModalOpen && (
         <AddContactModal
-          isOpen={isModalOpen}
+          isOpen={isAddContactModalOpen}
           onSave={handleOnModalSave}
-          onClose={() => setIsModalOpen(false)}
+          onClose={() => setIsAddContactModalOpen(false)}
         />
       )}
     </>

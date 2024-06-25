@@ -17,13 +17,13 @@ export const contactSlice = createSlice({
     setContacts: (state, action: PayloadAction<Contact[]>) => {
       state.contacts = action.payload;
     },
-    addContact: (state, action: PayloadAction<Contact>) => {
+    createContact: (state, action: PayloadAction<Contact>) => {
       state.contacts.push(action.payload);
     },
     deleteContact: (state, action: PayloadAction<string>) => {
       state.contacts = state.contacts.filter((contact) => contact.id !== action.payload);
     },
-    editContact(state, action: PayloadAction<Contact>) {
+    updateContact(state, action: PayloadAction<Contact>) {
       const index = state.contacts.findIndex(contact => contact.id === action.payload.id);
       if (index !== -1) {
         state.contacts[index] = action.payload;
@@ -32,5 +32,5 @@ export const contactSlice = createSlice({
   },
 });
 
-export const { addContact, deleteContact, setContacts } = contactSlice.actions;
+export const { createContact, deleteContact, setContacts, updateContact } = contactSlice.actions;
 export default contactSlice.reducer;
