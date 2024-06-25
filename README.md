@@ -12,6 +12,9 @@ For our component stylings, we're using [Chakra UI](https://chakra-ui.com/) and 
 
 This application is written to be scalable, so you could delete the JSON data fetching and saving to local storage, and instead use an API call via Axios or GraphQL if desired. The aim of this project was to get more familiar with how Redux works.
 
+## Visual
+![demo](https://github.com/twknab/contact-list/assets/20636750/fd6391f0-b48c-46d1-b949-21836c62af0b)
+
 ## Technologies Used
 
 - [Vite](https://vitejs.dev/)
