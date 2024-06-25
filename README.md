@@ -1,5 +1,8 @@
 # Contact List
 
+## Deployment
+- 👉 [View on Vercel](https://contact-list-teal.vercel.app/)
+
 ## Summary
 
 This application is just a small demo application utilizing [React](https://reactjs.org/) and [Redux](https://redux.js.org/) demonstrating how we can store, fetch, and add to our data store. Data is initialized with JSON data to mock an API call, and then stored in local storage, so that this data will persist on page reload or closing the tab. When new data is added, it is pushed to the data store and saved to local storage.
