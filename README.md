@@ -1,6 +1,7 @@
 # Contact List
 
 ## Deployment
+
 - 👉 [View on Vercel](https://contact-list-teal.vercel.app/)
 
 ## Summary
