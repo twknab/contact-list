@@ -95,6 +95,7 @@ function AddContactModal({ isOpen, onClose, onSave }: AddContactModalProps) {
         </ModalBody>
 
         <ModalFooter>
+          {/* TODO: Ensure can only save once all fields are completed */}
           <Button colorScheme="purple" mr={3} onClick={handleOnSave}>
             Save
           </Button>
