@@ -87,11 +87,11 @@ function ContactDetails() {
               <Text py="2">{notes}</Text>
               <List spacing={3} py="2">
                 <ListItem>
-                  <ListIcon as={EmailIcon} color="teal.500" />
+                  <ListIcon as={EmailIcon} color="purple" />
                   {email}
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={PhoneIcon} color="teal.500" />
+                  <ListIcon as={PhoneIcon} color="purple" />
                   {phoneNumber}
                 </ListItem>
               </List>
