@@ -71,7 +71,7 @@ function ContactCard({ contact }: ContactCardProps) {
         justifyContent="space-between"
       >
         <Flex alignItems="center">
-          <Avatar name={`${firstName} ${lastName}`} ml="12" />
+          <Avatar name={`${firstName} ${lastName}`} />
           <Box ml="3">
             <Text
               fontSize="xl"
