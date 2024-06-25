@@ -47,7 +47,7 @@ function EditContactModal({ contact, isOpen, onClose, onSave }: EditContactModal
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Add New Contact</ModalHeader>
+        <ModalHeader>Edit Contact</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <FormControl isRequired>
