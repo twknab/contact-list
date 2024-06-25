@@ -84,19 +84,19 @@ function ContactCard({ contact }: ContactCardProps) {
         <Box>
           <IconButton
             colorScheme="purple"
+            aria-label="Edit"
+            size="xs"
+            onClick={(e: React.SyntheticEvent) => handleEdit(e)}
+            icon={<EditIcon />}
+          />
+          <IconButton
+            colorScheme="red"
             aria-label="Delete"
             size="xs"
+            ml="1"
             icon={<DeleteIcon />}
             onClick={(e: React.SyntheticEvent) => handleDelete(e, contactId)}
             zIndex="100"
-          />
-          <IconButton
-            colorScheme="purple"
-            aria-label="Edit"
-            size="xs"
-            ml="1"
-            onClick={(e: React.SyntheticEvent) => handleEdit(e)}
-            icon={<EditIcon />}
           />
         </Box>
       </Flex>
